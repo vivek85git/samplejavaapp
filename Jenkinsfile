@@ -5,13 +5,13 @@ pipeline {
 	   steps {
                 echo 'compiling..'
 		git url: 'https://github.com/lerndevops/DevOpsClassCodes'
-		sh script: 'mvn compile'
+		sh script: '/opt/apache-maven-3.8.3/bin/mvn compile'
            }
         }
         stage('unit-test') {
 	   steps {
                 echo 'unittest..'
-	        sh script: 'mvn test'
+	        sh script: '/opt/apache-maven-3.8.3/bin/mvn test'
                  }
 	   post {
                success {
@@ -22,7 +22,7 @@ pipeline {
         stage('package') {
 	   steps {
                 echo 'package......'
-		sh script: 'mvn package'	
+		sh script: '/opt/apache-maven-3.8.3/bin/mvn package'	
            }		
         }
     }
