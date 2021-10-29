@@ -4,7 +4,7 @@ pipeline {
         stage('compile') {
 	   steps {
                 echo 'compiling..'
-		git url: 'https://github.com/lerndevops/DevOpsClassCodes'
+		git 'https://github.com/shubhsharm/samplejavaapp'
 		sh script: '/opt/apache-maven-3.8.3/bin/mvn compile'
            }
         }
@@ -30,7 +30,7 @@ pipeline {
                }
            }			
         }
-        stage('codecoverate') {
+        stage('codecoverage') {
 	   steps {
                 echo 'codecoverage..'
 		sh script: '/opt/apache-maven-3.8.3/bin/mvn cobertura:cobertura -Dcobertura.report.format=xml'
