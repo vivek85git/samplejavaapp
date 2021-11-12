@@ -14,7 +14,7 @@
             echo "No app service found"
          fi
     - name: deploy app
-      shell: kubectl create deploy myapp --image=08170/sampleapp:{{ build }}
+      shell: kubectl create deploy myapp --image=08170/samplejavaapp:{{ build }}
     - name: increase replicas 
       shell: kubectl scale deploy myapp --replicas=2
     - name: deploy service
